@@ -1,0 +1,109 @@
+#work .app-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: min(100%, 36rem);
+  margin-inline: auto;
+  gap: 1.25rem;
+  padding: 0.5rem 0.25rem 1.25rem;
+}
+
+#work .app-card {
+  min-height: 17rem;
+  padding: 1.5rem;
+  border: 1px solid #ece7e2;
+  border-radius: 1.75rem;
+  background: linear-gradient(160deg, #fff 15%, #fbf8f5 100%);
+  box-shadow: 0 12px 30px rgb(44 30 22 / 5%);
+  transition: box-shadow 220ms ease, border-color 220ms ease;
+}
+
+#work .app-card:hover {
+  border-color: #d7c8bc;
+  box-shadow: 0 20px 42px rgb(44 30 22 / 10%);
+}
+
+#work .app-card:nth-child(-n + 2)::before {
+  content: "Built independently";
+  margin-bottom: 0.75rem;
+  color: #76533e;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#work .app-card__icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 1rem;
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 5px 16px rgb(44 30 22 / 9%);
+}
+
+#work .app-card__icon img {
+  border-radius: inherit;
+}
+
+#work .app-card__tagline {
+  margin-bottom: 0.45rem;
+  color: #76533e;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+#work .app-card__download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  margin-top: 1rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #38271e;
+  border-radius: 9999px;
+  background: #38271e;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+#work .app-card__download:hover {
+  background: #fff;
+  color: #38271e;
+}
+
+#work .app-card__download:focus-visible {
+  outline: 3px solid #b68b6d;
+  outline-offset: 3px;
+}
+
+#work .app-card__download:active {
+  transform: translateY(1px);
+}
+
+#work .app-card__download:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#work .app-card__tagline + p {
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  #work .app-card {
+    min-height: 16rem;
+    padding: 1rem;
+    border-radius: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #work .app-card,
+  #work .app-card__download {
+    transition: none;
+  }
+}
